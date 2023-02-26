@@ -1,0 +1,116 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #fafafa;
+    color: #212121;
+    line-height: 1.5;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+#search-form {
+    font: inherit;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+
+    background-color: #5252833d;
+    box-shadow: 0px 1px 1px rgb(0 0 0 / 12%), 0px 4px 4px rgb(0 0 0 / 6%),
+        1px 4px 6px rgb(0 0 0 / 16%);
+
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+}
+
+#search-form input {
+    padding: 10px 150px 10px 10px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: none;
+    outline: none;
+
+    font-size: 15px;
+}
+
+#search-form button {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: none;
+
+    padding: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    margin-bottom: 20px;
+}
+
+.photo-card {
+    flex-basis: calc((100% - 30px) / 3);
+    max-width: 350px;
+
+    border: 1px solid #5252833d;
+    border-radius: 10px;
+    box-shadow: 0px 1px 1px rgb(0 0 0 / 12%), 0px 4px 4px rgb(0 0 0 / 6%),
+        1px 4px 6px rgb(0 0 0 / 16%);
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+}
+
+.info-flex {
+    display: flex;
+    justify-content: center;
+
+    padding: 5px;
+}
+
+.info-item {
+    margin-right: 10px;
+}
+
+.info-item:last-child {
+    margin-right: 0;
+}
+
+.load-more {
+    margin: 0 auto;
+    margin-bottom: 15px;
+    padding: 15px 20px;
+
+    font-weight: bold;
+
+    background-color: #5252833d;
+    color: #212121;
+    box-shadow: 0px 1px 1px rgb(0 0 0 / 12%), 0px 4px 4px rgb(0 0 0 / 6%),
+        1px 4px 6px rgb(0 0 0 / 16%);
+    text-transform: uppercase;
+
+    border: none;
+    cursor: pointer;
+}
