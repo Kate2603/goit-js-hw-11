@@ -1,13 +1,11 @@
 import axios from 'axios';
 
-// Запит на бекенд
-export async function fetchSearchImage(page, searchQuery) {
-  const API_URL = 'https://pixabay.com/api/';
-  const KEY = '?key=33957392-15c8dcee5be6fcb8a0c7e759b';
+axios.defaults.baseURL = 'https://pixabay.com/api/';
+const KEY = '31635899-1cb6f37c9ae866ffd2c461d46';
 
-  const responses = await axios.get(
-    `${API_URL}${KEY}&q=${searchQuery}&image_type=photo&orientation=horizontal&safesearch=true&page=${page}&per_page=40`
+export async function fetchArticles(query, page, perPage) {
+  const res = await axios.get(
+    `?key=${KEY}&q=${query}&image_type=photo&orientation=horizontal&safesearch=true&page=${page}&per_page=${perPage}`
   );
-
-  return await responses.data;
+  return res;
 }

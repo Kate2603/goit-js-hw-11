@@ -1,32 +1,32 @@
-// markup одной карточки
-export { createCardImg };
-const galleryList = document.querySelector('.gallery');
-function createCardImg(imgArr) {
-  galleryList.innerHTML = imgArr
-    .map(
-      img =>
-        `<div class="photo-card">
+export { createCards };
+const gallery = document.querySelector('.gallery');
+function createCards(hits) {
+  const cards = hits
+    .map(hit => {
+      const {
+        id,
+        largeImageURL,
+        webformatURL,
+        tags,
+        likes,
+        views,
+        comments,
+        downloads,
+      } = hit;
+      return `
+        <a class="gallery__item" href="${largeImageURL}" onclick="return false;">
+        <div class="photo-card" id=${id}>
+        <img class="gallery__image" src="${webformatURL}" alt="${tags}" loading="lazy" />
         <div class="info">
-        <a href="${img.largeImageURL}" alt="${img.tags}" >
-          <img src="${img.webformatURL}" alt="${img.tags}" loading="lazy" class="photo-img" />
-        </a>
-        <div class="info-flex">
-          <p class="info-item">
-            <b>Likes: ${img.likes}</b>
-          </p>
-          <p class="info-item">
-            <b>Views: ${img.views}</b>
-          </p>
-          <p class="info-item">
-            <b>Comments: ${img.comments}</b>
-          </p>
-          <p class="info-item">
-            <b>Downloads: ${img.downloads}</b>
-          </p>
-          
+          <p class="info__item"> <b>Likes</b> ${likes} </p>
+          <p class="info__item"> <b>Views</b> ${views} </p>
+          <p class="info__item"> <b>Comments</b> ${comments} </p>
+          <p class="info__item"> <b>Downloads</b> ${downloads} </p>
         </div>
-        </div>
-    </div>`
-    )
+      </div>
+      </a>`;
+    })
     .join('');
+
+  gallery.insertAdjacentHTML('beforeend', cards);
 }
